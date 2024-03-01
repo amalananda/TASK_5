@@ -1,0 +1,200 @@
+/* @import './base.css'; */
+
+/* #app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+
+} */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/public/static/Inter-Regular.ttf') format('woff2'); /* Sesuaikan path dengan lokasi font Anda */
+}
+
+@font-face {
+  font-family: 'Inter-subtitle';
+  font-style: normal;
+  font-weight: 100;
+  src: url('/public/static/Inter-Regular.ttf') format('woff2'); /* Sesuaikan path dengan lokasi font Anda */
+}
+
+body {
+  background-color: #d6e6ff;
+}
+
+.product-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px; /* Sesuaikan lebar kartu dengan kebutuhan */
+  height: 400px; /* Sesuaikan tinggi kartu dengan kebutuhan */
+  background-color: white;
+  border-radius: 10px;
+}
+
+.product-card-content {
+  display: flex;
+  align-items: top;
+  padding: 20px;
+  height: 380px;
+}
+
+.product-card-content-items {
+  flex: 300px 400px;
+}
+.product-card img {
+  margin-top: 30px;
+  width: 200px; /* Set the width of the image */
+  height: 300px; /* Maintain the aspect ratio of the image */
+  margin-right: 10px; /* Adjust spacing between image and text */
+}
+
+.text-content {
+  flex-grow: 1; /* Allow text content to grow and take remaining space */
+}
+
+/* .container {
+  position: relative;
+  height: 100vh;
+} */
+
+.product-title {
+  margin: 10px;
+  top: 0;
+  right: 0;
+  font-family: 'Inter';
+  font-weight: bold;
+  font-size: 20px;
+  height: 30px;
+}
+
+.product-details .category-rating {
+  height: 40 px;
+  justify-content: space-between;
+  margin-inline: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.product-details .category {
+  /* margin: 10px; */
+  top: 0;
+  right: 0;
+  /* float: right; */
+  font-family: 'Inter';
+  /* overflow: hidden; */
+}
+
+.product-details .rating-circles {
+  /* justify-content: left; */
+  margin: 0px;
+}
+
+.product-details hr {
+  height: 2px;
+  margin-inline: 10px;
+  margin-top: 0;
+  border-width: 0;
+  background-color: #dcdcdc;
+}
+
+.product-details p {
+  margin: 10px;
+  top: 0;
+  right: 0;
+  float: right;
+  font-family: 'Inter';
+  overflow: hidden;
+}
+
+.product-description {
+  font-family: 'Inter';
+  font-size: 15px;
+  margin: 10px;
+  overflow: hidden;
+  height: 150px; /* Set the maximum height for the container */
+  text-overflow: ellipsis; /* Display an ellipsis (...) for the overflowed content */
+  /* white-space: nowrap; Prevent text from wrapping to the next line */
+}
+
+.product-category {
+  font-family: 'Inter';
+  font-size: 15px;
+  margin: 10px;
+  /* font-weight: bold; */
+}
+
+@media (max-width: 700px) {
+  .product-card {
+    font-size: 0.9em; /* Atur ukuran font yang sesuai untuk layar lebih kecil */
+  }
+}
+/* .skeleton {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  max-width: 400px;
+  height: 155px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: #e2e8f0;
+  box-shadow: 0 9px 33px rgba(0, 0, 0, 0.07);
+}
+
+.card-text,
+.skeleton-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 250px;
+  margin-left: 10px;
+}
+
+.card-img,
+.skeleton-img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
+
+.card-description,
+.skeleton-description {
+  margin: 10px 0;
+}
+
+.card-link,
+.skeleton-link {
+  margin-top: 20px;
+}
+
+.card-skills,
+.skeleton-skills {
+  display: flex;
+  justify-content: space-between;
+} */
