@@ -1,12 +1,12 @@
 <script setup>
-// import HelloWorld from './components/HelloWorld.vue'
-// import TheWelcome from './components/TheWelcome.vue'
-import ProductDisplay from './components/ProductDisplay.vue'
+// import ProductDisplay from './components/ProductDisplay.vue'
+import MainPage from './components/MainPage.vue'
 </script>
 
 <template>
   <main>
-    <div><ProductDisplay /></div>
+    <!-- <ProductDisplay /> -->
+    <MainPage />
   </main>
 </template>
 

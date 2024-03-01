@@ -1,46 +1,67 @@
-<script setup>
-import SkeletonLoading from './SkeletonLoading.vue'
-</script>
 <script>
+// import SkeletonLoading from './SkeletonLoading.vue'
+
 export default {
+  // components: {
+  //   SkeletonLoading
+  // },
+  props: {
+    product: {
+      type: Object,
+      default: () => {
+        return {
+          title: '',
+          rating: { rate: 0, count: 0 },
+          image: '',
+          category: '',
+          price: '',
+          description: ''
+        }
+      }
+    },
+    category: String,
+    clickGetNextProduct: Function
+  },
   data() {
     return {
-      product: {
-        title: '',
-        rating: { rate: 0, count: 0 },
-        image: '',
-        category: '',
-        price: '',
-        description: ''
-      },
+      // product:
       loading: false,
-      number: 0,
-      // number: 14,
-      category: '',
-      women_category: "women's clothing"
+      number: 0
+      // category: ''
     }
   },
 
   methods: {
-    async getNextProduct() {
-      this.loading = true
-      try {
-        if (this.number === 20) this.number = 0
+    // async getNextProduct() {
+    //   this.loading = true
+    //   try {
+    //     if (this.number === 20) this.number = 0
 
-        this.number = this.number + 1
-        // Panggil API untuk mendapatkan produk berikutnya
-        this.loading = true
-        const response = await fetch(`https://fakestoreapi.com/products/${this.number}`)
+    //     this.number = this.number + 1
+    // Panggil API untuk mendapatkan produk berikutnya
+    //     this.loading = true
+    //     const response = await fetch(`https://fakestoreapi.com/products/${this.number}`)
 
-        const data = await response.json()
+    //     const data = await response.json()
 
-        this.product = data
-      } catch (error) {
-        console.error('Error fetching product:', error)
-      } finally {
-        this.loading = false
-      }
-    },
+    //     this.product = data
+
+    //     switch (data.category) {
+    //       case "men's clothing":
+    //         this.category = 'men'
+    //         break
+    //       case "women's clothing":
+    //         this.category = 'women'
+    //         break
+    //       default:
+    //         this.category = 'nonGender'
+    //     }
+    //   } catch (error) {
+    //     console.error('Error fetching product:', error)
+    //   } finally {
+    //     this.loading = false
+    //   }
+    // },
     getFilledColor(index) {
       let color
 
@@ -66,19 +87,25 @@ export default {
       }
 
       // Custom logic to determine the filled color based on the category
+    },
+    getNextProduct() {
+      if (typeof this.clickGetNextProduct() === 'function') {
+        this.clickGetNextProduct()
+      }
     }
-  },
-  mounted() {
-    // Panggil metode untuk mendapatkan produk pertama saat komponen dimuat
-    this.getNextProduct()
   }
+
+  // mounted() {
+  // Panggil metode untuk mendapatkan produk pertama saat komponen dimuat
+  // this.getNextProduct()
+  // }
 }
 </script>
 
 <template>
   <!-- Product Card Component -->
-  <div v-if="this.loading">
-    <SkeletonLoading />
+  <div v-if="this.category == 'nonGender'">
+    <img src="../assets/sad-face.png" />
   </div>
   <div v-else class="product-card">
     <div class="product-card-content">
