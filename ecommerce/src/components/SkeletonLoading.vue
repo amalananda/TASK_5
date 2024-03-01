@@ -12,9 +12,7 @@
           <div class="product-details">
             <div class="category-rating">
               <div class="category"></div>
-              <div class="rating-circles">
-                <div v-for="i in 5" :key="i" class="circle"></div>
-              </div>
+              <div class="rating-circles"></div>
             </div>
             <hr />
             <div class="product-description"></div>
@@ -47,7 +45,7 @@
 }
 
 .product-card-content-items {
-  flex: 300px 400px;
+  /* flex: 300px 400px; */
 }
 .product-card .product-img {
   margin-top: 30px;
@@ -58,7 +56,7 @@
 }
 
 .text-content {
-  flex-grow: 1; /* Allow text content to grow and take remaining space */
+  /* flex-grow: 1; Allow text content to grow and take remaining space */
 }
 
 /* .container {
@@ -70,17 +68,19 @@
   margin: 10px;
   top: 0;
   right: 0;
+  width: 400px;
   height: 30px;
   background-color: #dcdcdc;
 }
 
 .product-details .category-rating {
   height: 40px;
-  justify-content: space-between;
-  margin-inline: 10px;
-  display: flex;
-  align-items: center;
+  /* justify-content: space-between; */
+  /* margin-inline: 10px; */
+  /* display: flex; */
+  /* align-items: center; */
   background-color: #dcdcdc;
+  margin-bottom: 10px;
 }
 
 .product-details .category {
@@ -102,7 +102,7 @@
   margin-inline: 10px;
   margin-top: 0;
   border-width: 0;
-  background-color: #dcdcdc;
+  /* background-color: #dcdcdc; */
 }
 
 .product-details p {
