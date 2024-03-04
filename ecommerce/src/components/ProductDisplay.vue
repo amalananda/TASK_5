@@ -1,10 +1,5 @@
 <script>
-// import SkeletonLoading from './SkeletonLoading.vue'
-
 export default {
-  // components: {
-  //   SkeletonLoading
-  // },
   props: {
     product: {
       type: Object,
@@ -26,26 +21,10 @@ export default {
   data() {
     return {
       bodyBackGroundColor: 'black'
-      // elements: [{ content: this.title, backgroundColor: 'pink' }]
     }
   },
   methods: {
     getFilledColor(index) {
-      // let color
-
-      // choose color base on category
-      // switch (this.category) {
-      //   case 'men':
-      //     color = '#002772'
-      //     break
-      //   case 'women':
-      //     color = '#720060'
-      //     break
-      //   case 'nonGender':
-      //     color = '#dcdcdc'
-      //     break
-      // }
-
       const ceil_number = Math.ceil(this.product.rating.rate)
 
       // colored bullet by on rating number
@@ -80,7 +59,7 @@ export default {
 
   <div v-else class="product-card">
     <div class="product-card-content">
-      <div class="product-card-content-items">
+      <div class="product-card-content-item">
         <img :src="this.product.image" :alt="this.product.image" width="200px" height="300px" />
       </div>
       <div class="product-card-content-items">
