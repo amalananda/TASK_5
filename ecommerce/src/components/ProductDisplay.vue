@@ -20,93 +20,64 @@ export default {
       }
     },
     category: String,
-    clickGetNextProduct: Function
+    clickGetNextProduct: Function,
+    fontInCardColor: String
   },
   data() {
     return {
-      // product:
-      loading: false,
-      number: 0
-      // category: ''
+      bodyBackGroundColor: 'black'
+      // elements: [{ content: this.title, backgroundColor: 'pink' }]
     }
   },
-
   methods: {
-    // async getNextProduct() {
-    //   this.loading = true
-    //   try {
-    //     if (this.number === 20) this.number = 0
-
-    //     this.number = this.number + 1
-    // Panggil API untuk mendapatkan produk berikutnya
-    //     this.loading = true
-    //     const response = await fetch(`https://fakestoreapi.com/products/${this.number}`)
-
-    //     const data = await response.json()
-
-    //     this.product = data
-
-    //     switch (data.category) {
-    //       case "men's clothing":
-    //         this.category = 'men'
-    //         break
-    //       case "women's clothing":
-    //         this.category = 'women'
-    //         break
-    //       default:
-    //         this.category = 'nonGender'
-    //     }
-    //   } catch (error) {
-    //     console.error('Error fetching product:', error)
-    //   } finally {
-    //     this.loading = false
-    //   }
-    // },
     getFilledColor(index) {
-      let color
+      // let color
 
       // choose color base on category
-      switch (this.product.category) {
-        case "men's clothing":
-          color = '#002772'
-          break
-        case "women's clothing":
-          color = '#720060'
-          break
-        default:
-          color = 'red'
-      }
+      // switch (this.category) {
+      //   case 'men':
+      //     color = '#002772'
+      //     break
+      //   case 'women':
+      //     color = '#720060'
+      //     break
+      //   case 'nonGender':
+      //     color = '#dcdcdc'
+      //     break
+      // }
 
       const ceil_number = Math.ceil(this.product.rating.rate)
 
       // colored bullet by on rating number
       if (index <= ceil_number) {
-        return color
+        return this.fontInCardColor
       } else {
         return 'white' // Warna default atau tidak diisi
       }
 
       // Custom logic to determine the filled color based on the category
     },
+
     getNextProduct() {
       if (typeof this.clickGetNextProduct() === 'function') {
         this.clickGetNextProduct()
       }
     }
   }
-
-  // mounted() {
-  // Panggil metode untuk mendapatkan produk pertama saat komponen dimuat
-  // this.getNextProduct()
-  // }
 }
 </script>
 
 <template>
   <!-- Product Card Component -->
+
   <div v-if="this.category == 'nonGender'">
-    <img src="../assets/sad-face.png" />
+    <div class="uncategorized">
+      <img src="../assets/sad-face.png" width="660px" height="380px" />
+      <p>This product is unavailable to show</p>
+      <button @click="getNextProduct">Next Product</button>
+    </div>
   </div>
+
   <div v-else class="product-card">
     <div class="product-card-content">
       <div class="product-card-content-items">
@@ -114,7 +85,9 @@ export default {
       </div>
       <div class="product-card-content-items">
         <div class="text-content">
-          <div class="product-title">{{ this.product.title }}</div>
+          <div class="product-title" :style="{ color: this.fontInCardColor }">
+            {{ this.product.title }}
+          </div>
           <div class="product-details">
             <div class="category-rating">
               <div class="category">{{ this.product.category }}</div>
@@ -131,8 +104,31 @@ export default {
             <hr />
             <div class="product-description">{{ this.product.description }}</div>
             <hr />
-            <button @click="getNextProduct" :disabled="loading">Next Product</button>
-            <p class="product-price">${{ this.product.price }}</p>
+            <p class="product-price" :style="{ color: this.fontInCardColor }">
+              ${{ this.product.price }}
+            </p>
+
+            <button
+              class="buy-now"
+              @click="getBuyNow"
+              :style="{
+                backgroundColor: this.fontInCardColor,
+                borderColor: this.fontInCardColor
+              }"
+            >
+              Buy Now
+            </button>
+
+            <button
+              class="next-product"
+              @click="getNextProduct"
+              :style="{
+                color: this.fontInCardColor,
+                borderColor: this.fontInCardColor
+              }"
+            >
+              Next Product
+            </button>
           </div>
         </div>
       </div>
@@ -153,5 +149,46 @@ export default {
   border: 2px solid #000; /* Warna default lingkaran */
   align-self: flex-end;
   transform: translate(0%, -70%);
+}
+
+.uncategorized {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px; /* Sesuaikan lebar kartu dengan kebutuhan */
+  height: 400px; /* Sesuaikan tinggi kartu dengan kebutuhan */
+  background-color: white;
+  border-radius: 10px;
+}
+
+.uncategorized img {
+  display: flex;
+  align-items: top;
+  padding: 20px;
+  height: 300px;
+  transform: translate(6%, 10%);
+  position: relative;
+}
+
+.uncategorized p {
+  margin: 10px;
+  top: 0;
+  right: 0;
+  font-family: 'Inter';
+  font-size: 13px;
+  height: 30px;
+  transform: translate(33%, -670%);
+}
+
+.uncategorized button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-52%, -100%);
+  background-color: white;
+  width: 300px;
+  height: 25px;
+  border-radius: 5px;
 }
 </style>

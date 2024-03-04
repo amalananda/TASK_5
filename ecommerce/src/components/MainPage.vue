@@ -19,7 +19,8 @@ export default {
       },
       loading: false,
       number: 0,
-      category: ''
+      category: '',
+      fontInCardColor: '#002772'
     }
   },
 
@@ -40,6 +41,7 @@ export default {
         switch (data.category) {
           case "men's clothing":
             this.category = 'men'
+
             break
           case "women's clothing":
             this.category = 'women'
@@ -53,37 +55,24 @@ export default {
         this.loading = false
       }
     },
-    // getFilledColor(index) {
-    //   let color
 
-    //   // choose color base on category
-    //   switch (this.product.category) {
-    //     case "men's clothing":
-    //       color = '#002772'
-    //       break
-    //     case "women's clothing":
-    //       color = '#720060'
-    //       break
-    //     default:
-    //       color = 'black'
-    //   }
-
-    //   const ceil_number = Math.ceil(this.product.rating.rate)
-
-    //   // colored bullet by on rating number
-    //   if (index <= ceil_number) {
-    //     return color
-    //   } else {
-    //     return 'white' // Warna default atau tidak diisi
-    //   }
-
-    //   // Custom logic to determine the filled color based on the category
-    // }
     HandlerGetNextProduct() {
       this.getNextProduct()
     }
   },
-
+  watch: {
+    category(value) {
+      if (value == 'men') {
+        document.body.style.backgroundColor = '#D6E6FF'
+        this.fontInCardColor = '#002772'
+      } else if (value == 'women') {
+        document.body.style.backgroundColor = '#FDE2FF'
+        this.fontInCardColor = '#720060'
+      } else {
+        document.body.style.backgroundColor = '#dcdcdc'
+      }
+    }
+  },
   mounted() {
     // Panggil metode untuk mendapatkan produk pertama saat komponen dimuat
     this.getNextProduct()
@@ -100,6 +89,7 @@ export default {
     <ProductDisplay
       :product="this.product"
       :category="this.category"
+      :fontInCardColor="this.fontInCardColor"
       :clickGetNextProduct="this.HandlerGetNextProduct"
     />
   </div>

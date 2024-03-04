@@ -43,9 +43,9 @@ a,
   src: url('/public/static/Inter-Regular.ttf') format('woff2'); /* Sesuaikan path dengan lokasi font Anda */
 }
 
-body {
+/* body {
   background-color: #d6e6ff;
-}
+} */
 
 .product-card {
   position: absolute;
@@ -92,10 +92,11 @@ body {
   font-weight: bold;
   font-size: 20px;
   height: 30px;
+  color: #002772;
 }
 
 .product-details .category-rating {
-  height: 40 px;
+  height: 40px;
   justify-content: space-between;
   margin-inline: 10px;
   display: flex;
@@ -128,7 +129,6 @@ body {
   margin: 10px;
   top: 0;
   right: 0;
-  float: right;
   font-family: 'Inter';
   overflow: hidden;
 }
@@ -148,6 +148,34 @@ body {
   font-size: 15px;
   margin: 10px;
   /* font-weight: bold; */
+}
+
+.product-price {
+  font-family: 'Inter';
+  font-size: 15px;
+  margin: 10px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.buy-now {
+  border-radius: 5px;
+  margin-left: 10px;
+  width: 200px;
+  height: 30px;
+  font-weight: bold;
+  color: white;
+  /* background-color: #002772; */
+  border: none;
+}
+
+.next-product {
+  border-radius: 5px;
+  margin-left: 10px;
+  width: 200px;
+  height: 30px;
+  font-weight: bold;
+  border: 2px solid;
 }
 
 @media (max-width: 700px) {
