@@ -58,10 +58,15 @@
   font-weight: normal;
 } */
 
+html {
+  height: 100vh; /* Check for this in your CSS */
+}
+
 body {
-  min-height: 100vh;
-  color: var(--color-text);
-  background: var(--color-background);
+  /* height: 1000px; */
+  /* margin: 0; */
+  /* color: var(--color-text); */
+  /* background: var(--color-background);
   transition:
     color 0.5s,
     background-color 0.5s;
@@ -82,5 +87,5 @@ body {
   font-size: 15px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; */
 }

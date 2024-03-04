@@ -160,6 +160,8 @@ export default {
   height: 400px; /* Sesuaikan tinggi kartu dengan kebutuhan */
   background-color: white;
   border-radius: 10px;
+  border: 3px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .uncategorized img {

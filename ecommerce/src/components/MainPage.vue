@@ -64,12 +64,17 @@ export default {
     category(value) {
       if (value == 'men') {
         document.body.style.backgroundColor = '#D6E6FF'
+        document.body.style.backgroundImage = "url('../../public/bg-pattern.png')"
+        // document.body.style.background = 'linear-gradient(to bottom, #D6E6FF 70%, #FFFF 100%)'
+
         this.fontInCardColor = '#002772'
       } else if (value == 'women') {
         document.body.style.backgroundColor = '#FDE2FF'
+        document.body.style.backgroundImage = "url('../../public/bg-pattern.png')"
         this.fontInCardColor = '#720060'
       } else {
         document.body.style.backgroundColor = '#dcdcdc'
+        document.body.style.backgroundImage = 'none'
       }
     }
   },

@@ -15,12 +15,15 @@ import MainPage from './components/MainPage.vue'
   line-height: 1.5;
 } */
 
-main {
-  /* display: flex; */
-  /* place-items: center; */
-  /* background-color: #fde2ff; */
-  /* padding-right: calc(var(--section-gap) / 2); */
-}
+/* main { */
+/* display: flex; */
+/* place-items: center; */
+/* background-color: #fde2ff; */
+/* padding-right: calc(var(--section-gap) / 2); */
+/* } */
+/* body {
+  height: 100vh;
+} */
 
 /* @media (min-width: 1024px) { */
 /* header .wrapper { */
