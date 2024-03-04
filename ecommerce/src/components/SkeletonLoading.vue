@@ -44,19 +44,12 @@
   height: 380px;
 }
 
-.product-card-content-items {
-  /* flex: 300px 400px; */
-}
 .product-card .product-img {
   margin-top: 30px;
   width: 200px; /* Set the width of the image */
   height: 300px; /* Maintain the aspect ratio of the image */
   margin-right: 10px; /* Adjust spacing between image and text */
   background-color: #dcdcdc;
-}
-
-.text-content {
-  /* flex-grow: 1; Allow text content to grow and take remaining space */
 }
 
 /* .container {
@@ -87,7 +80,6 @@
   /* margin: 10px; */
   top: 0;
   right: 0;
-  /* float: right; */
   background-color: #dcdcdc;
   /* overflow: hidden; */
 }
